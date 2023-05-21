@@ -2,7 +2,7 @@
 Reto #11, matrices y demás funciones:)
 ## Primer punto:
 - Desarrolle un programa que permita realizar la suma/resta de matrices. El programa debe validar las condiciones necesarias para ejecutar la operación.
-### Explicación:
+#### Explicación:
 - Tenemos que tener en cuenta que las dos matrices deben tener la misma cantidad de elementos pra poder realizar alguna operación, asi que realice un función con ayuda de un condicional que verifica con un len si las matrices son iguales, se suma el elemento [0][0] de la matriz1 y el mismo elemento de la matriza2.
 ```
 def validar_matrices(m1, m2):
@@ -81,7 +81,7 @@ if validar_matrices(matriz1, matriz2):# usamos el condicional para validar si so
 ```
 ## Punto 2:
 - Desarrolle un programa que permita realizar el producto de matrices. El programa debe validar las condiciones necesarias para ejecutar la operación.
-### Explicación: 
+#### Explicación: 
 - Tenemos que tener en cuenta que las dos matrices deben tener la misma cantidad de elementos pra poder realizar alguna operación, asi que realice un función con ayuda de un condicional que verifica con un len si las matrices son iguales, se resta el elemento [0][0] de la matriz1 y el mismo elemento de la matriza2.
 ```
 def validar_matrices_multiplicacion(matriz1, matriz2):
@@ -138,7 +138,7 @@ if validar_matrices_multiplicacion(matriz1, matriz2):
 ```
 ## Punto 3:
 - Desarrolle un programa que permita obtener la matriz transpuesta de una matriz ingresada. El programa debe validar las condiciones necesarias para ejecutar la operación.
-### Explicación: 
+#### Explicación: 
 -
 ```
 d
@@ -151,4 +151,6 @@ d
 ```
 ## Punto 5:
 - Desarrollar un programa que sume los elementos de una columna dada de una matriz.
-### Explicación:
+#### Explicación:
+```
+```
