@@ -1,4 +1,4 @@
-# las_matricces_y_yo
+# las_matricces_y_yo-no_somos_compatibles
 Reto #11, matrices y demás funciones:)
 ## Primer punto:
 - Desarrolle un programa que permita realizar la suma/resta de matrices. El programa debe validar las condiciones necesarias para ejecutar la operación.
