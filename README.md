@@ -4,6 +4,7 @@ Reto #11, matrices y demás funciones:)
 - Desarrolle un programa que permita realizar la suma/resta de matrices. El programa debe validar las condiciones necesarias para ejecutar la operación.
 #### Explicación:
 - Primero investigue como ingresar una matriz por teclado, la funsion toma como argumentos la cantidad de filas y columnas que ingrese el usuario alli se crea una lista vacia que se llamara matriz, cree un ciclo for que recorre el elemento i en la cantidad de filas, luego creamos una lista vacia llamada fila y ponemos un ciclo for para que recoorra en las columnas, luego creamos la variable elemento para que el usuario ingrese los elementos de la matriz segun la cantidad que haya puesto. Para sumar las matrices se crea una lista vacia llamada resultado
+```
 def ingresar_matriz(filas, columnas): 
      """
     permite crear una matriz
