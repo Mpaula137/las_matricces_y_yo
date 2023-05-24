@@ -343,3 +343,5 @@ if __name__ == "__main__":
 # Mostrar el resultado
  print(f"La suma de la columna {fila} es: {suma_fila}")
 ```
+# Las MATRICES son lo peor para enteder
+## pero se hizo el mayor intento y lo que no entendi toco pedir explicación:/
