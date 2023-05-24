@@ -289,7 +289,7 @@ if __name__ == "__main__":
 ## Punto 5:
 - Desarrollar un programa que sume los elementos de una columna dada de una matriz.
 #### Explicación:
-- 
+-  Hay una función llamada sumar_fila que toma dos argumentos: matriz y fila. Esta función calcula la suma de los elementos de una fila específica de la matriz. Primero, se inicializa una variable suma en 0. Luego, se verifica si el índice de la fila es válido (es menor que la longitud de la matriz). Si es así, se itera sobre cada elemento de la fila y se suma a la variable suma. Finalmente, se retorna el valor de suma.
 ```
 def ingresar_matriz(filas, columnas): 
      """
