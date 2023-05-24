@@ -3,26 +3,26 @@ Reto #11, matrices y demás funciones:)
 ## Primer punto:
 - Desarrolle un programa que permita realizar la suma/resta de matrices. El programa debe validar las condiciones necesarias para ejecutar la operación.
 #### Explicación:
-- Tenemos que tener en cuenta que las dos matrices deben tener la misma cantidad de elementos pra poder realizar alguna operación, asi que realice un función con ayuda de un condicional que verifica con un len si las matrices son iguales, se suma el elemento [0][0] de la matriz1 y el mismo elemento de la matriza2.
-```
-def validar_matrices(m1, m2):
-    """
-    Verifica si las matrices tienen las mismas dimensiones.
+- Primero investigue como ingresar una matriz por teclado, la funsion toma como argumentos la cantidad de filas y columnas que ingrese el usuario alli se crea una lista vacia que se llamara matriz, cree un ciclo for que recorre el elemento i en la cantidad de filas, luego creamos una lista vacia llamada fila y ponemos un ciclo for para que recoorra en las columnas, luego creamos la variable elemento para que el usuario ingrese los elementos de la matriz segun la cantidad que haya puesto. Para sumar las matrices se crea una lista vacia llamada resultado
+def ingresar_matriz(filas, columnas): 
+     """
+    permite crear una matriz
 
     Argumentos:
-        matriz1(m1)-(list): La primera matriz.
-        matriz2(m2)-(list): La segunda matriz.
+       filas: los digitos horizontales
+       columnas: los digitos verticales
 
     Return:
-        bool: True si las matrices tienen las mismas dimensiones, False en caso contrario.
+        matriz
     """
-    # Verificar si las matrices tienen las mismas dimensiones
-    if len(m1) != len(m2) or len(m1[0]) != len(m2[0]):
-        print("Las matrices no tienen las mismas dimensiones.")
-        return False
-
-    return True
-
+     matriz = [] # se crea una lista vacia donde se almacenara la matriz
+     for i in range(filas): #se crea un ciclo for para elemento i en el rango de filas
+        fila = [] # se crea una lista con las filas
+        for j in range(columnas): #se crea un ciclo for para el elemento j en el rango de columnas 
+            elemento = int(input(f"Ingrese el elemento [{i}][{j}]: ")) # se solicita ingresar los elementos en este formato
+            fila.append(elemento) #se agrega el elemento en filas
+        matriz.append(fila)# se agrega a la matriz
+     return matriz
 
 def sumar_matrices(m1, m2):
     """
@@ -63,20 +63,33 @@ def restar_matrices(m1, m2):
         resultado.append(fila)
     return resultado
 
+if __name__ == "__main__":
+ # Solicitar al usuario las dimensiones de las matrices
+ filas = int(input("Ingrese el número de filas de las matrices: "))
+ columnas = int(input("Ingrese el número de columnas de las matrices: "))
 
-# Ejemplo de uso del programa
-matriz1 = [[65, 23, 4], [2, 13, 43]]
-matriz2 = [[12, 2, 34], [17, 14, 15]]
+ matriz1 = ingresar_matriz(filas, columnas)
+ print("matriz 1:", matriz1)
 
-if validar_matrices(matriz1, matriz2):# usamos el condicional para validar si son iguales
-    print("Suma de matrices:")
-    resultado_suma = sumar_matrices(matriz1, matriz2)#llamamos la funcion para sumar
-    for fila in resultado_suma:
+
+ matriz2 = ingresar_matriz(filas, columnas)
+ print("Matriz 2",matriz2)
+
+# Verificar si las matrices tienen las mismas dimensiones
+if len(matriz1) != len(matriz2) or len(matriz1[0]) != len(matriz2[0]):
+    print("Error: Las matrices deben tener las mismas dimensiones para realizar la operación.")
+else:
+    # Realizar la suma y resta de las matrices
+    matriz_suma = sumar_matrices(matriz1, matriz2)
+    matriz_resta = restar_matrices(matriz1, matriz2)
+
+    # Mostrar los resultados
+    print("La suma de las matrices es:")
+    for fila in matriz_suma:
         print(fila)
 
-    print("Resta de matrices:")
-    resultado_resta = restar_matrices(matriz1, matriz2)#llamamos la funcion para restar
-    for fila in resultado_resta:
+    print("La resta de las matrices es:")
+    for fila in matriz_resta:
         print(fila)
 ```
 ## Punto 2:
@@ -84,24 +97,25 @@ if validar_matrices(matriz1, matriz2):# usamos el condicional para validar si so
 #### Explicación: 
 - Tenemos que tener en cuenta que las dos matrices deben tener la misma cantidad de elementos pra poder realizar alguna operación, asi que realice un función con ayuda de un condicional que verifica con un len si las matrices son iguales, se resta el elemento [0][0] de la matriz1 y el mismo elemento de la matriza2.
 ```
-def validar_matrices_multiplicacion(matriz1, matriz2):
-    """
-    Verifica si las matrices pueden ser multiplicadas.
+def ingresar_matriz(filas, columnas): 
+     """
+    permite crear una matriz
 
     Argumentos:
-        matriz1 (list): La primera matriz.
-        matriz2 (list): La segunda matriz.
+       filas: los digitos horizontales
+       columnas: los digitos verticales
 
-    Returns:
-        bool: True si las matrices pueden ser multiplicadas, False en caso contrario.
+    Return:
+        matriz
     """
-    # Verificar si el número de columnas de matriz1 es igual al número de filas de matriz2
-    if len(matriz1[0]) != len(matriz2):
-        print("Las matrices no cumplen las condiciones para la multiplicación.")
-        return False
-
-    return True
-
+     matriz = [] # se crea una lista vacia donde se almacenara la matriz
+     for i in range(filas): #se crea un ciclo for para elemento i en el rango de filas
+        fila = [] # se crea una lista con las filas
+        for j in range(columnas): #se crea un ciclo for para el elemento j en el rango de columnas 
+            elemento = int(input(f"Ingrese el elemento [{i}][{j}]: ")) # se solicita ingresar los elementos en este formato
+            fila.append(elemento) #se agrega el elemento en filas
+        matriz.append(fila)# se agrega a la matriz
+     return matriz
 
 def multiplicar_matrices(matriz1, matriz2):
     """
@@ -124,16 +138,29 @@ def multiplicar_matrices(matriz1, matriz2):
             fila.append(elemento)# se agrega el cada elemento multiplicado a la lista
         resultado.append(fila) #estas se agrega a la lista de resultados 
     return resultado
+if __name__ == "__main__":
+ # Solicitar al usuario las dimensiones de las matrices
+ filas = int(input("Ingrese el número de filas de las matrices: "))
+ columnas = int(input("Ingrese el número de columnas de las matrices: "))
+
+ matriz1 = ingresar_matriz(filas, columnas)
+ print("matriz 1:", matriz1)
 
 
-# Ejemplo de uso del programa
-matriz1 = [[1, 2, 3], [4, 5, 6]]
-matriz2 = [[7, 8], [9, 10], [11, 12]]
+ matriz2 = ingresar_matriz(filas, columnas)
+ print("Matriz 2",matriz2)
 
-if validar_matrices_multiplicacion(matriz1, matriz2):
-    print("Producto de matrices:")
-    resultado_producto = multiplicar_matrices(matriz1, matriz2)
-    for fila in resultado_producto:
+# Verificar si las matrices tienen las mismas dimensiones
+if len(matriz1) != len(matriz2) or len(matriz1[0]) != len(matriz2[0]):
+    print("Error: Las matrices deben tener las mismas dimensiones para realizar la operación.")
+else:
+    # Realizar la suma y resta de las matrices
+    matriz_multiplicacion = multiplicar_matrices(matriz1, matriz2)
+    
+
+    # Mostrar los resultados
+    print("el producto de las matrices es:")
+    for fila in matriz_multiplicacion:
         print(fila)
 ```
 ## Punto 3:
@@ -141,16 +168,178 @@ if validar_matrices_multiplicacion(matriz1, matriz2):
 #### Explicación: 
 -
 ```
-d
+
+def ingresar_matriz(filas, columnas): 
+     """
+    permite crear una matriz
+
+    Argumentos:
+       filas: los digitos horizontales
+       columnas: los digitos verticales
+
+    Return:
+        matriz
+    """
+     matriz = [] # se crea una lista vacia donde se almacenara la matriz
+     for i in range(filas): #se crea un ciclo for para elemento i en el rango de filas
+        fila = [] # se crea una lista con las filas
+        for j in range(columnas): #se crea un ciclo for para el elemento j en el rango de columnas 
+            elemento = int(input(f"Ingrese el elemento [{i}][{j}]: ")) # se solicita ingresar los elementos en este formato
+            fila.append(elemento) #se agrega el elemento en filas
+        matriz.append(fila)# se agrega a la matriz
+     return matriz
+
+def obtener_matriz_transpuesta(matriz):
+    """
+    Obtiene la matriz transpuesta.
+
+    Argumento:
+        matriz (list): La matriz.
+
+    Returns:
+        list: La matriz transpuesta.
+    """
+    filas = len(matriz) 
+    columnas = len(matriz[0])
+
+    matriz_transpuesta = [] # se crea una lista vacia
+    for j in range(columnas):# para un elemento j en el rango de columnas
+        fila_transpuesta = []# se da una lista vacia de la fila
+        for i in range(filas):# para un elemento i en el rango de filas
+            fila_transpuesta.append(matriz[i][j])# se agrega el elemento cambiando su posicion
+        matriz_transpuesta.append(fila_transpuesta)
+
+    return matriz_transpuesta
+
+if __name__ == "__main__":
+ filas = int(input("Ingrese el número de filas de la matriz: "))
+ columnas = int(input("Ingrese el número de columnas de la matriz: "))
+
+
+ matriz = ingresar_matriz(filas, columnas)
+ for fila in matriz:
+  print(fila)
+
+ #  Obtener la matriz transpuesta
+ matriz_transpuesta = obtener_matriz_transpuesta(matriz)
+
+ # Mostrar el resultado
+ print("La matriz transpuesta es:")
+ for fila in matriz_transpuesta: # la matrzi queda en formato vertical
+    print(fila)
+
 ```
 ## Punto 4:
 - Desarrollar un programa que sume los elementos de una columna dada de una matriz.
 #### Explicación:
 ```
+def ingresar_matriz(filas, columnas): 
+     """
+    permite crear una matriz
 
+    Argumentos:
+       filas: los digitos horizontales
+       columnas: los digitos verticales
+
+    Return:
+        matriz
+    """
+     matriz = [] # se crea una lista vacia donde se almacenara la matriz
+     for i in range(filas): #se crea un ciclo for para elemento i en el rango de filas
+        fila = [] # se crea una lista con las filas
+        for j in range(columnas): #se crea un ciclo for para el elemento j en el rango de columnas 
+            elemento = int(input(f"Ingrese el elemento [{i}][{j}]: ")) # se solicita ingresar los elementos en este formato
+            fila.append(elemento) #se agrega el elemento en filas
+        matriz.append(fila)# se agrega a la matriz
+     return matriz
+
+def sumar_columna(matriz, columna):
+    """
+    Suma los elementos de una columna dada de una matriz.
+
+    Argumentos:
+        matriz (list): La matriz.
+        columna (int): El índice de la columna a sumar.
+
+    Returns:
+        int: La suma de los elementos de la columna.
+    """
+    suma = 0 #inicializamos una variable en 0
+    for fila in matriz: #para cada fila de la matriz
+        if columna < len(fila): # si la colunma es menor a la cantidad de filas
+            suma += fila[columna]# sumar la columna dada
+    return suma
+
+if __name__ == "__main__":
+ filas = int(input("Ingrese el número de filas de la matriz: "))
+ columnas = int(input("Ingrese el número de columnas de la matriz: "))
+
+ matriz = ingresar_matriz(filas, columnas)
+ for fila in matriz:
+  print (fila)
+ # Solicitar al usuario la columna a sumar
+ columna = int(input("Ingrese el número de columna a sumar: "))
+
+ # Sumar los elementos de la columna
+ suma_columna = sumar_columna(matriz, columna)
+
+# Mostrar el resultado
+ print(f"La suma de la columna {columna} es: {suma_columna}")
 ```
 ## Punto 5:
 - Desarrollar un programa que sume los elementos de una columna dada de una matriz.
 #### Explicación:
+- 
 ```
+def ingresar_matriz(filas, columnas): 
+     """
+    permite crear una matriz
+
+    Argumentos:
+       filas: los digitos horizontales
+       columnas: los digitos verticales
+
+    Return:
+        matriz
+    """
+     matriz = [] # se crea una lista vacia donde se almacenara la matriz
+     for i in range(filas): #se crea un ciclo for para elemento i en el rango de filas
+        fila = [] # se crea una lista con las filas
+        for j in range(columnas): #se crea un ciclo for para el elemento j en el rango de columnas 
+            elemento = int(input(f"Ingrese el elemento [{i}][{j}]: ")) # se solicita ingresar los elementos en este formato
+            fila.append(elemento) #se agrega el elemento en filas
+        matriz.append(fila)# se agrega a la matriz
+     return matriz
+def sumar_fila(matriz, fila):
+    """
+    Suma los elementos de una fila dada de una matriz.
+
+    Argumentos:
+        matriz (list): La matriz.
+        fila (int): El índice de la fila a sumar.
+
+    Returns:
+        int: La suma de los elementos de la fila.
+    """
+    suma = 0 #inicializamos la variable en 0
+    if fila < len(matriz):# creamos un condicional que diga que si fila es menor que la cantidad de elementos de la matriz
+        for elemento in matriz[fila]:# para cada elemento de la fila
+            suma += elemento # sumar los elementos que hayan
+    return suma
+
+if __name__ == "__main__":
+ filas = int(input("Ingrese el número de filas de la matriz: "))
+ columnas = int(input("Ingrese el número de columnas de la matriz: "))
+
+ matriz = ingresar_matriz(filas, columnas)
+ for fila in matriz:
+  print (fila)
+ # Solicitar al usuario la columna a sumar
+ fila = int(input("Ingrese el número de columna a sumar: "))
+
+ # Sumar los elementos de la columna
+ suma_fila = sumar_fila(matriz, fila)
+
+# Mostrar el resultado
+ print(f"La suma de la columna {fila} es: {suma_fila}")
 ```
