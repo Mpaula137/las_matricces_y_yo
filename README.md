@@ -96,7 +96,7 @@ else:
 ## Punto 2:
 - Desarrolle un programa que permita realizar el producto de matrices. El programa debe validar las condiciones necesarias para ejecutar la operación.
 #### Explicación: 
-- Tenemos que tener en cuenta que las dos matrices deben tener la misma cantidad de elementos pra poder realizar alguna operación, asi que realice un función con ayuda de un condicional que verifica con un len si las matrices son iguales, se resta el elemento [0][0] de la matriz1 y el mismo elemento de la matriza2.
+- Tenemos la función para ingresar matrices, luego Toma dos argumentos: matriz1 y matriz2, que son las matrices a multiplicar. La función crea una lista vacía llamada resultado donde se almacenará la matriz resultante. Luego, utiliza tres bucles for anidados para recorrer las filas y columnas de las matrices de entrada. En cada iteración, realiza el cálculo de la multiplicación de los elementos correspondientes de las matrices y los acumula en la variable elemento. Posteriormente, agrega elemento a la lista fila, y finalmente agrega la lista fila a la matriz resultado. Al finalizar, la función retorna la matriz resultante.
 ```
 def ingresar_matriz(filas, columnas): 
      """
@@ -167,9 +167,8 @@ else:
 ## Punto 3:
 - Desarrolle un programa que permita obtener la matriz transpuesta de una matriz ingresada. El programa debe validar las condiciones necesarias para ejecutar la operación.
 #### Explicación: 
--
+- Esta función recibe una matriz como argumento y calcula su matriz transpuesta. Comienza obteniendo el número de filas y columnas de la matriz. Luego, crea una lista vacía llamada matriz_transpuesta, donde se almacenará la matriz transpuesta. Utiliza dos bucles for anidados para recorrer la matriz original. En cada iteración, accede al elemento matriz[i][j] de la matriz original y lo agrega a la lista fila_transpuesta, intercambiando la posición de los índices i y j. Después de recorrer todas las filas y columnas.
 ```
-
 def ingresar_matriz(filas, columnas): 
      """
     permite crear una matriz
@@ -228,11 +227,11 @@ if __name__ == "__main__":
  print("La matriz transpuesta es:")
  for fila in matriz_transpuesta: # la matrzi queda en formato vertical
     print(fila)
-
 ```
 ## Punto 4:
 - Desarrollar un programa que sume los elementos de una columna dada de una matriz.
 #### Explicación:
+- Esta función recibe una matriz y un índice de columna como argumentos y calcula la suma de los elementos de esa columna en particular. Comienza inicializando una variable suma en 0. Luego, utiliza un bucle for para recorrer cada fila de la matriz. Dentro del bucle, verifica si el índice de columna es válido para la fila actual. Si es así, suma el elemento correspondiente de la columna a la variable suma. Finalmente, retorna el valor de suma.
 ```
 def ingresar_matriz(filas, columnas): 
      """
